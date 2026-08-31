@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cireng Yummy - Modern & Elegant Culinary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #e11d48;
+            --primary-hover: #be123c;
+            --secondary: #fbbf24;
+            --dark: #0f172a;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-gray: #64748b;
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --radius-xl: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar Announcement */
+        .top-bar {
+            background: linear-gradient(90deg, #e11d48, #f43f5e);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .top-bar span {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-left: 8px;
+            font-size: 0.8rem;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=1200') center/cover no-repeat;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 40px 20px;
+        }
+
+        .hero-container {
+            max-width: 800px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ffffff, #fecdd3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-wa {
+            background-color: #25d366;
+            color: var(--white);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-wa:hover {
+            background-color: #1eb954;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Highlight Promo Section */
+        .special-promo {
+            max-width: 1100px;
+            margin: -60px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .promo-card {
+            background: linear-gradient(135deg, #fff, #fff1f2);
+            border: 2px solid #fecdd3;
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .promo-badge-lg {
+            background: var(--primary);
+            color: var(--white);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .promo-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .promo-desc {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        /* Menu Grid */
+        .section-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .menu-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .menu-desc {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .price-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .current-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: #94a3b8;
+            text-decoration: line-through;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 100px;
+            font-size: 0.95rem;
+        }
+
+        footer strong {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .promo-card { grid-template-columns: 1fr; text-align: center; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        🔥 SPECIAL DEAL: BUY 1 GET 1 FREE UNTUK SEMUA VARIAN HARI INI! <span>LIMITED</span>
+    </div>
+
+    <header>
+        <div class="hero-container">
+            <div class="hero-tag"><i class="fa-solid fa-fire"></i> Cireng Crispy Premium</div>
+            <h1 class="hero-title">Nikmati Sensasi Renyah & Lumer Cireng Yummy</h1>
+            <p class="hero-subtitle">Perpaduan tekstur crispy di luar dan kelembutan gurih di dalam dengan bumbu pilihan rasanya buat nagih.</p>
+            <a href="https://wa.me/6281234567890?text=Halo%20Cireng%20Yummy,%20saya%20mau%20ambil%20PROMO%20BUY%201%20GET%201!" class="btn btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Klaim Promo Buy 1 Get 1
+            </a>
+        </div>
+    </header>
+
+    <section class="special-promo">
+        <div class="promo-card">
+            <div>
+                <span class="promo-badge-lg">Penawaran Terbatas</span>
+                <h3 class="promo-title">Paket Combo Buy 1 Get 1</h3>
+                <p class="promo-desc">Beli 1 Porsi Cireng Varian Apapun, Gratis 1 Porsi Cireng Original Rujak. Khusus untuk pemesanan via WhatsApp hari ini!</p>
+            </div>
+            <div style="text-align: right;">
+                <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20pesan%20Paket%20Combo%20BUY%201%20GET%201" class="btn btn-wa" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Checkout Promo WA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="section-container">
+        <div class="section-header">
+            <h2>Pilihan Varian Favorit</h2>
+            <p style="color: var(--text-gray);">Dibuat segar
